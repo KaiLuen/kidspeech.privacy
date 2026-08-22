@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>KidSpeech 隱私權政策 / Privacy Policy</title>
+<style>
+  :root {
+    --bg: #ffffff;
+    --surface: #f6f8f7;
+    --text: #1c2320;
+    --muted: #5a6663;
+    --line: #dfe5e3;
+    --accent: #00a86b;
+    --accent-soft: #e6f7f0;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #121614;
+      --surface: #1b2220;
+      --text: #e8eeeb;
+      --muted: #9aa8a3;
+      --line: #2c3633;
+      --accent: #00ff99;
+      --accent-soft: #17332a;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    padding: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang TC",
+      "Noto Sans TC", "Microsoft JhengHei", Roboto, Helvetica, Arial, sans-serif;
+    font-size: 17px;
+    line-height: 1.75;
+    -webkit-text-size-adjust: 100%;
+  }
+  .wrap { max-width: 760px; margin: 0 auto; padding: 40px 22px 80px; }
+  header { border-bottom: 1px solid var(--line); padding-bottom: 24px; margin-bottom: 8px; }
+  h1 { font-size: 1.7rem; line-height: 1.3; margin: 0 0 6px; letter-spacing: -0.01em; }
+  .sub { color: var(--muted); font-size: 0.92rem; margin: 0; }
+  h2 {
+    font-size: 1.16rem;
+    margin: 40px 0 10px;
+    padding-top: 4px;
+    letter-spacing: -0.01em;
+  }
+  h3 { font-size: 1rem; margin: 22px 0 6px; }
+  p, li { color: var(--text); }
+  ul { padding-left: 1.25em; }
+  li { margin: 6px 0; }
+  a { color: var(--accent); text-decoration: none; border-bottom: 1px solid currentColor; }
+  a:hover { opacity: 0.8; }
+  .lang-switch { display: flex; gap: 8px; margin: 20px 0 0; }
+  .lang-switch button {
+    font: inherit;
+    font-size: 0.9rem;
+    padding: 6px 16px;
+    border-radius: 999px;
+    border: 1px solid var(--line);
+    background: transparent;
+    color: var(--muted);
+    cursor: pointer;
+  }
+  .lang-switch button[aria-selected="true"] {
+    background: var(--accent-soft);
+    border-color: var(--accent);
+    color: var(--text);
+    font-weight: 600;
+  }
+  .callout {
+    background: var(--surface);
+    border-left: 3px solid var(--accent);
+    border-radius: 0 8px 8px 0;
+    padding: 14px 18px;
+    margin: 20px 0;
+  }
+  .callout p { margin: 0; }
+  .callout p + p { margin-top: 8px; }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 16px 0;
+    font-size: 0.94rem;
+  }
+  th, td {
+    text-align: left;
+    padding: 10px 12px;
+    border-bottom: 1px solid var(--line);
+    vertical-align: top;
+  }
+  th { color: var(--muted); font-weight: 600; white-space: nowrap; }
+  .table-scroll { overflow-x: auto; }
+  footer {
+    margin-top: 56px;
+    padding-top: 20px;
+    border-top: 1px solid var(--line);
+    color: var(--muted);
+    font-size: 0.88rem;
+  }
+  [hidden] { display: none !important; }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <h1>KidSpeech 隱私權政策<br><span style="font-weight:400;color:var(--muted);font-size:1.15rem;">Privacy Policy</span></h1>
+  <p class="sub">最後更新 / Last updated：2026-08-22　·　生效日 / Effective：2026-08-22</p>
+  <div class="lang-switch" role="tablist">
+    <button role="tab" aria-selected="true" data-lang="zh">中文</button>
+    <button role="tab" aria-selected="false" data-lang="en">English</button>
+  </div>
+</header>
+
+<!-- ============ 中文 ============ -->
+<section id="zh">
+
+<h2>簡介</h2>
+<p>KidSpeech（以下稱「本 App」）是一款為 2 至 3 歲幼兒設計的語音學習應用程式，由 <strong>CityFun</strong>（以下稱「我們」）開發與維運。本政策說明本 App 會處理哪些資料、為什麼要處理、以及資料會傳送到哪裡。</p>
+
+<div class="callout">
+  <p><strong>重點摘要：</strong>本 App 不需要註冊、不需要帳號，也不會蒐集姓名、生日、電話、電子郵件或任何可以辨識身分的個人資料。</p>
+  <p>唯一會離開裝置的資料，是孩子按住錄音鍵時錄下的<strong>短音檔</strong>，僅為了做語音辨識而傳送給 OpenAI，辨識完成後<strong>立刻從裝置上刪除</strong>。我們自己沒有伺服器，不留存、不分析、也不販售任何錄音。</p>
+</div>
+
+<h2>一、我們處理的資料</h2>
+
+<h3>1. 錄音（會傳送到第三方）</h3>
+<ul>
+  <li><strong>什麼時候錄：</strong>只有在使用者按住畫面上的錄音按鈕時才會啟動麥克風，放開手指即停止。App 不會在背景錄音，也不會自動開啟麥克風。</li>
+  <li><strong>錄多久：</strong>單次錄音長度上限為 <strong>10 秒</strong>（不足 0.5 秒者視為誤觸，直接捨棄）。</li>
+  <li><strong>存在哪裡：</strong>錄音以 AAC 格式（.m4a、單聲道）寫入裝置的<strong>系統暫存目錄</strong>，不會存進相簿、檔案 App 或任何雲端空間。</li>
+  <li><strong>用途：</strong>僅用於將孩子唸出的詞語轉成文字，並與題目的正確答案比對，以判斷發音是否正確、給予回饋與計分。</li>
+  <li><strong>之後怎麼處理：</strong>辨識流程結束後（無論成功、失敗或中途取消），該暫存音檔會<strong>立即被刪除</strong>。</li>
+</ul>
+
+<h3>2. 儲存在裝置上的設定（不會離開裝置）</h3>
+<p>以下資料以裝置本機偏好設定（iOS/Android 的 App 私有儲存區）保存，僅供本 App 讀取，不會上傳到任何地方：</p>
+<div class="table-scroll">
+<table>
+  <thead><tr><th>項目</th><th>內容</th><th>目的</th></tr></thead>
+  <tbody>
+    <tr><td>語言設定</td><td>繁體中文或英文</td><td>記住使用者選擇的介面與題目語言</td></tr>
+    <tr><td>音量設定</td><td>背景音樂音量、互動音效音量</td><td>記住使用者調整過的音量</td></tr>
+    <tr><td>功能權限</td><td>免費／訂閱等級標記</td><td>決定可使用的內容範圍</td></tr>
+  </tbody>
+</table>
+</div>
+<p>解除安裝本 App，或使用系統的「清除 App 資料」功能，即可一併刪除上述所有本機資料。</p>
+
+<h3>3. 我們「不」蒐集的資料</h3>
+<ul>
+  <li>不蒐集姓名、生日、性別、住址、電話、電子郵件等個人身分資料。</li>
+  <li>不蒐集位置資訊、通訊錄、相簿、行事曆等裝置內容。</li>
+  <li>不蒐集廣告識別碼（IDFA／AAID），不做使用者追蹤、行為分析或個人化廣告。</li>
+  <li>本 App 未內建任何廣告、分析（Analytics）或第三方追蹤 SDK。</li>
+  <li>本 App 沒有社群功能、留言、聊天或使用者間的互動，孩子無法公開分享任何內容。</li>
+</ul>
+
+<h2>二、第三方服務：OpenAI 語音辨識</h2>
+<p>本 App 的語音辨識由 <a href="https://openai.com/" target="_blank" rel="noopener">OpenAI</a> 的 Audio Transcriptions API 提供（使用 <code>gpt-4o-transcribe</code> 模型）。</p>
+<ul>
+  <li><strong>傳送的內容：</strong>僅有前述的短音檔本身，以及該題目的語言代碼（如 <code>zh</code>、<code>en</code>）以提升辨識準確度。</li>
+  <li><strong>不會傳送：</strong>裝置識別碼、帳號資訊、姓名或任何可辨識個人身分的欄位。音檔不會附帶任何身分標記。</li>
+  <li><strong>回傳的內容：</strong>辨識出的文字，僅在裝置端即時用於比對答案，不會被存下來。</li>
+  <li><strong>OpenAI 端的處理：</strong>依 OpenAI 對 API 資料的使用政策，透過 API 傳送的內容<strong>預設不會用於訓練其模型</strong>，並僅為濫用偵測目的保留有限期間後刪除。詳細條款請見 <a href="https://openai.com/policies/privacy-policy/" target="_blank" rel="noopener">OpenAI 隱私權政策</a> 與 <a href="https://openai.com/enterprise-privacy/" target="_blank" rel="noopener">API 資料使用政策</a>。</li>
+</ul>
+<p>本 App 除 OpenAI 之外，不會將任何資料傳送給其他第三方，也不會為了行銷或任何目的出售、出租或交換使用者資料。</p>
+
+<h2>三、兒童隱私</h2>
+<p>本 App 的主要使用者是幼兒，我們因此刻意採取「最小化蒐集」的設計：不建立帳號、不做身分辨識、不投放廣告、不做行為追蹤，錄音只作為當下判斷發音之用並隨即刪除。</p>
+<p>我們不會在知情的情況下蒐集兒童的個人身分資料。若您是家長或監護人，並認為我們可能不慎取得了孩子的個人資料，請透過下方信箱與我們聯絡，我們將立即查明並刪除。</p>
+<p>我們建議由家長或監護人陪同幼兒使用本 App，並在裝置的系統設定中管理麥克風權限。</p>
+
+<h2>四、權限說明</h2>
+<div class="table-scroll">
+<table>
+  <thead><tr><th>權限</th><th>為什麼需要</th></tr></thead>
+  <tbody>
+    <tr><td>麥克風</td><td>錄下孩子唸出的詞語以進行發音辨識。拒絕此權限時，App 其餘功能（看圖卡、聽發音）仍可正常使用，僅無法使用錄音評分。</td></tr>
+    <tr><td>網路連線</td><td>將音檔傳送至語音辨識服務並取回結果。</td></tr>
+  </tbody>
+</table>
+</div>
+<p>您可以隨時到 iOS「設定 → KidSpeech」或 Android「設定 → 應用程式 → KidSpeech → 權限」中撤銷麥克風權限。</p>
+
+<h2>五、資料保存與安全</h2>
+<ul>
+  <li>我們不營運任何後端伺服器，也沒有存放使用者資料的資料庫。</li>
+  <li>錄音僅以暫存檔形式短暫存在於裝置上，辨識結束後即刪除；不會保留於任何我們可存取的位置。</li>
+  <li>與語音辨識服務之間的所有傳輸均採用 HTTPS 加密連線。</li>
+</ul>
+
+<h2>六、您的權利</h2>
+<p>由於我們不保存任何可識別您或您孩子身分的資料，我們沒有可供查詢、更正或匯出的個人資料紀錄。您對本機資料的控制方式如下：</p>
+<ul>
+  <li><strong>刪除：</strong>解除安裝本 App，或清除 App 資料，即可刪除全部本機設定。</li>
+  <li><strong>停止傳送：</strong>撤銷麥克風權限或關閉網路連線，即不會再有任何音檔被傳送。</li>
+</ul>
+<p>若您位於歐洲經濟區、英國或其他賦予您資料主體權利的地區，仍歡迎透過下方信箱與我們聯繫。</p>
+
+<h2>七、政策變更</h2>
+<p>本政策如有修訂，我們會更新本頁最上方的「最後更新」日期。若涉及重大變更（例如新增資料蒐集項目），我們會在 App 內以明顯方式告知。</p>
+
+<h2>八、聯絡我們</h2>
+<p>對本政策或資料處理方式有任何疑問，請聯絡：</p>
+<ul>
+  <li>開發者：CityFun</li>
+  <li>電子郵件：<a href="mailto:stonegray1@gmail.com">stonegray1@gmail.com</a></li>
+</ul>
+
+</section>
+
+<!-- ============ English ============ -->
+<section id="en" hidden>
+
+<h2>Introduction</h2>
+<p>KidSpeech (the “App”) is a speech-learning application designed for children aged 2–3, developed and operated by <strong>CityFun</strong> (“we”, “us”). This policy explains what data the App processes, why, and where it goes.</p>
+
+<div class="callout">
+  <p><strong>Summary:</strong> The App requires no sign-up and no account. It does not collect names, birthdates, phone numbers, email addresses, or any personally identifying information.</p>
+  <p>The only data that leaves the device is a <strong>short audio clip</strong> recorded while the child holds the record button. It is sent to OpenAI solely for speech recognition and is <strong>deleted from the device immediately</strong> afterwards. We operate no servers of our own, and we never retain, analyze, or sell recordings.</p>
+</div>
+
+<h2>1. Data We Process</h2>
+
+<h3>1.1 Voice recordings (sent to a third party)</h3>
+<ul>
+  <li><strong>When:</strong> The microphone activates only while the user holds down the record button on screen, and stops the moment it is released. The App never records in the background and never activates the microphone on its own.</li>
+  <li><strong>Length:</strong> A single recording is capped at <strong>10 seconds</strong>. Recordings shorter than 0.5 seconds are treated as accidental taps and discarded.</li>
+  <li><strong>Where it is stored:</strong> The recording is written as an AAC file (.m4a, mono) to the device’s <strong>system temporary directory</strong>. It is never saved to the photo library, the Files app, or any cloud storage.</li>
+  <li><strong>Purpose:</strong> Solely to transcribe the spoken word and compare it against the expected answer, in order to judge pronunciation and provide feedback and a score.</li>
+  <li><strong>Afterwards:</strong> Once the recognition step finishes — whether it succeeds, fails, or is cancelled — the temporary audio file is <strong>deleted immediately</strong>.</li>
+</ul>
+
+<h3>1.2 Settings stored on the device (never transmitted)</h3>
+<p>The following are stored in the App’s private on-device preferences, readable only by the App, and are never uploaded anywhere:</p>
+<div class="table-scroll">
+<table>
+  <thead><tr><th>Item</th><th>Content</th><th>Purpose</th></tr></thead>
+  <tbody>
+    <tr><td>Language</td><td>Traditional Chinese or English</td><td>Remember the chosen interface and content language</td></tr>
+    <tr><td>Sound settings</td><td>Background music and interaction sound volume</td><td>Remember the user’s volume preferences</td></tr>
+    <tr><td>Entitlement</td><td>Free / subscribed tier flag</td><td>Determine which content is available</td></tr>
+  </tbody>
+</table>
+</div>
+<p>Uninstalling the App, or clearing its data via system settings, removes all of the above.</p>
+
+<h3>1.3 What we do NOT collect</h3>
+<ul>
+  <li>No names, birthdates, gender, addresses, phone numbers, or email addresses.</li>
+  <li>No location data, contacts, photos, or calendar access.</li>
+  <li>No advertising identifiers (IDFA / AAID); no user tracking, behavioral profiling, or personalized advertising.</li>
+  <li>No advertising, analytics, or third-party tracking SDKs are embedded in the App.</li>
+  <li>No social features, comments, chat, or user-to-user interaction. Children cannot publicly share any content.</li>
+</ul>
+
+<h2>2. Third-Party Service: OpenAI Speech Recognition</h2>
+<p>Speech recognition is provided by the <a href="https://openai.com/" target="_blank" rel="noopener">OpenAI</a> Audio Transcriptions API, using the <code>gpt-4o-transcribe</code> model.</p>
+<ul>
+  <li><strong>What is sent:</strong> Only the short audio clip described above, plus the language code for the current item (e.g. <code>zh</code>, <code>en</code>) to improve accuracy.</li>
+  <li><strong>What is not sent:</strong> No device identifiers, account information, names, or any personally identifying fields. The audio carries no identity marker.</li>
+  <li><strong>What comes back:</strong> The transcribed text, used on-device in real time to check the answer and never stored.</li>
+  <li><strong>Handling by OpenAI:</strong> Under OpenAI’s API data usage policy, content submitted through the API is <strong>not used to train their models by default</strong>, and is retained only for a limited period for abuse monitoring before deletion. See the <a href="https://openai.com/policies/privacy-policy/" target="_blank" rel="noopener">OpenAI Privacy Policy</a> and <a href="https://openai.com/enterprise-privacy/" target="_blank" rel="noopener">API data usage policies</a>.</li>
+</ul>
+<p>Apart from OpenAI, the App transmits no data to any third party. We never sell, rent, or trade user data for marketing or any other purpose.</p>
+
+<h2>3. Children’s Privacy</h2>
+<p>The App’s primary users are young children, so it is deliberately built for minimal collection: no accounts, no identification, no advertising, no behavioral tracking. Recordings exist only long enough to judge a single pronunciation attempt and are then deleted.</p>
+<p>We do not knowingly collect personal information from children. If you are a parent or guardian and believe we may have inadvertently obtained your child’s personal information, please contact us at the address below and we will investigate and delete it promptly.</p>
+<p>We recommend that a parent or guardian supervise young children while using the App and manage microphone permissions in the device’s system settings.</p>
+
+<h2>4. Permissions</h2>
+<div class="table-scroll">
+<table>
+  <thead><tr><th>Permission</th><th>Why it is needed</th></tr></thead>
+  <tbody>
+    <tr><td>Microphone</td><td>To record the spoken word for pronunciation recognition. If denied, the rest of the App (viewing cards, hearing pronunciation) continues to work; only recorded scoring is unavailable.</td></tr>
+    <tr><td>Internet</td><td>To send the audio to the speech recognition service and receive the result.</td></tr>
+  </tbody>
+</table>
+</div>
+<p>You may revoke microphone access at any time via iOS Settings → KidSpeech, or Android Settings → Apps → KidSpeech → Permissions.</p>
+
+<h2>5. Retention and Security</h2>
+<ul>
+  <li>We operate no backend servers and maintain no database of user data.</li>
+  <li>Recordings exist only briefly as temporary files on the device and are deleted after recognition. They are never retained anywhere we can access.</li>
+  <li>All transmission to the speech recognition service uses encrypted HTTPS connections.</li>
+</ul>
+
+<h2>6. Your Rights</h2>
+<p>Because we retain no data that identifies you or your child, there is no personal data record for us to look up, correct, or export. You control on-device data as follows:</p>
+<ul>
+  <li><strong>Deletion:</strong> Uninstall the App or clear its data to remove all local settings.</li>
+  <li><strong>Stop transmission:</strong> Revoke the microphone permission or disable network access, and no audio will be sent.</li>
+</ul>
+<p>If you are located in the European Economic Area, the United Kingdom, or another region that grants you data subject rights, you are welcome to contact us at the address below.</p>
+
+<h2>7. Changes to This Policy</h2>
+<p>If this policy is revised, we will update the “Last updated” date at the top of this page. For material changes — such as collecting a new category of data — we will notify users prominently within the App.</p>
+
+<h2>8. Contact Us</h2>
+<p>For questions about this policy or our data practices, please contact:</p>
+<ul>
+  <li>Developer: CityFun</li>
+  <li>Email: <a href="mailto:stonegray1@gmail.com">stonegray1@gmail.com</a></li>
+</ul>
+
+</section>
+
+<footer>
+  <p>© 2026 CityFun · KidSpeech</p>
+</footer>
+
+</div>
+
+<script>
+  const buttons = document.querySelectorAll('.lang-switch button');
+  const sections = { zh: document.getElementById('zh'), en: document.getElementById('en') };
+  function show(lang) {
+    sections.zh.hidden = lang !== 'zh';
+    sections.en.hidden = lang !== 'en';
+    document.documentElement.lang = lang === 'zh' ? 'zh-Hant' : 'en';
+    buttons.forEach(b => b.setAttribute('aria-selected', String(b.dataset.lang === lang)));
+  }
+  buttons.forEach(b => b.addEventListener('click', () => show(b.dataset.lang)));
+  if ((navigator.language || '').toLowerCase().startsWith('en')) show('en');
+</script>
+
+</body>
+</html>
