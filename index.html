@@ -108,7 +108,7 @@
 
 <header>
   <h1>KidSpeech 隱私權政策<br><span style="font-weight:400;color:var(--muted);font-size:1.15rem;">Privacy Policy</span></h1>
-  <p class="sub">最後更新 / Last updated：2026-08-22　·　生效日 / Effective：2026-08-22</p>
+  <p class="sub">最後更新 / Last updated：2026-09-21　·　生效日 / Effective：2026-09-21</p>
   <div class="lang-switch" role="tablist">
     <button role="tab" aria-selected="true" data-lang="zh">中文</button>
     <button role="tab" aria-selected="false" data-lang="en">English</button>
@@ -123,7 +123,8 @@
 
 <div class="callout">
   <p><strong>重點摘要：</strong>本 App 不需要註冊、不需要帳號，也不會蒐集姓名、生日、電話、電子郵件或任何可以辨識身分的個人資料。</p>
-  <p>唯一會離開裝置的資料，是孩子按住錄音鍵時錄下的<strong>短音檔</strong>，僅為了做語音辨識而傳送給 OpenAI，辨識完成後<strong>立刻從裝置上刪除</strong>。我們自己沒有伺服器，不留存、不分析、也不販售任何錄音。</p>
+  <p>孩子按住錄音鍵時錄下的<strong>短音檔</strong>，會連同正在練習的詞語一起傳送給 Microsoft Azure AI Speech 評估發音，評分完成後<strong>立刻從裝置上刪除</strong>，Microsoft 也不會保存。我們不留存、不分析、也不販售任何錄音。</p>
+  <p>此外，本 App 會從 Google Firebase 下載圖卡內容，訂閱則由 Apple 或 Google 處理。這些都不會讓我們取得任何可以辨識您或孩子身分的資料。</p>
 </div>
 
 <h2>一、我們處理的資料</h2>
@@ -131,14 +132,21 @@
 <h3>1. 錄音（會傳送到第三方）</h3>
 <ul>
   <li><strong>什麼時候錄：</strong>只有在使用者按住畫面上的錄音按鈕時才會啟動麥克風，放開手指即停止。App 不會在背景錄音，也不會自動開啟麥克風。</li>
-  <li><strong>錄多久：</strong>單次錄音長度上限為 <strong>10 秒</strong>（不足 0.5 秒者視為誤觸，直接捨棄）。</li>
-  <li><strong>存在哪裡：</strong>錄音以 AAC 格式（.m4a、單聲道）寫入裝置的<strong>系統暫存目錄</strong>，不會存進相簿、檔案 App 或任何雲端空間。</li>
-  <li><strong>用途：</strong>僅用於將孩子唸出的詞語轉成文字，並與題目的正確答案比對，以判斷發音是否正確、給予回饋與計分。</li>
-  <li><strong>之後怎麼處理：</strong>辨識流程結束後（無論成功、失敗或中途取消），該暫存音檔會<strong>立即被刪除</strong>。</li>
+  <li><strong>錄多久：</strong>單次錄音長度上限為 <strong>10 秒</strong>（不足 0.5 秒者視為誤觸，直接捨棄，不會傳送）。</li>
+  <li><strong>存在哪裡：</strong>錄音以 WAV 格式（16 kHz、單聲道）寫入裝置的<strong>系統暫存目錄</strong>，不會存進相簿、檔案 App 或任何雲端空間。</li>
+  <li><strong>用途：</strong>僅用於將孩子的發音與圖卡上的詞語比對，判斷發音是否正確、給予回饋與計分。</li>
+  <li><strong>之後怎麼處理：</strong>評分流程結束後（無論成功、失敗或中途取消），該暫存音檔會<strong>立即被刪除</strong>。</li>
 </ul>
 
-<h3>2. 儲存在裝置上的設定（不會離開裝置）</h3>
-<p>以下資料以裝置本機偏好設定（iOS/Android 的 App 私有儲存區）保存，僅供本 App 讀取，不會上傳到任何地方：</p>
+<h3>2. 訂閱購買</h3>
+<ul>
+  <li>購買流程完全由 Apple App Store 或 Google Play 處理，我們不會取得您的付款資料、姓名或 Apple ID／Google 帳號。</li>
+  <li>本 App 只會取得購買狀態（哪個方案、是否有效、到期日），用來解鎖內容，並顯示在「我的訂閱」頁面。</li>
+  <li><strong>僅限 Android：</strong>為了顯示方案與到期日，本 App 會把 Google Play 的購買憑證（purchase token）傳送到我們的雲端函式（見第二節第 2 點），由它向 Google Play 查詢後回傳結果。購買憑證是 Google Play 產生的隨機字串，不含任何個人資料，也不會被保存。</li>
+</ul>
+
+<h3>3. 儲存在裝置上的資料（不會離開裝置）</h3>
+<p>以下資料保存在本 App 於裝置上的私有儲存區，僅供本 App 讀取，不會上傳到任何地方：</p>
 <div class="table-scroll">
 <table>
   <thead><tr><th>項目</th><th>內容</th><th>目的</th></tr></thead>
@@ -146,12 +154,16 @@
     <tr><td>語言設定</td><td>繁體中文或英文</td><td>記住使用者選擇的介面與題目語言</td></tr>
     <tr><td>音量設定</td><td>背景音樂音量、互動音效音量</td><td>記住使用者調整過的音量</td></tr>
     <tr><td>功能權限</td><td>免費／訂閱等級標記</td><td>決定可使用的內容範圍</td></tr>
+    <tr><td>隱私權同意紀錄</td><td>同意的政策版本與日期</td><td>判斷是否需要再次顯示本政策</td></tr>
+    <tr><td>評分邀請紀錄</td><td>首次使用日期、完成測驗的次數、評分邀請出現的時間與次數，以及家長是否選擇不再詢問</td><td>避免太常請您評分</td></tr>
+    <tr><td>更新提示紀錄</td><td>上次提示更新時的 App 版本</td><td>避免重複跳出同一則更新提示</td></tr>
+    <tr><td>已下載的內容</td><td>圖卡圖片、音檔及其版本號</td><td>離線也能使用，並只下載有變動的部分</td></tr>
   </tbody>
 </table>
 </div>
 <p>解除安裝本 App，或使用系統的「清除 App 資料」功能，即可一併刪除上述所有本機資料。</p>
 
-<h3>3. 我們「不」蒐集的資料</h3>
+<h3>4. 我們「不」蒐集的資料</h3>
 <ul>
   <li>不蒐集姓名、生日、性別、住址、電話、電子郵件等個人身分資料。</li>
   <li>不蒐集位置資訊、通訊錄、相簿、行事曆等裝置內容。</li>
@@ -160,18 +172,35 @@
   <li>本 App 沒有社群功能、留言、聊天或使用者間的互動，孩子無法公開分享任何內容。</li>
 </ul>
 
-<h2>二、第三方服務：OpenAI 語音辨識</h2>
-<p>本 App 的語音辨識由 <a href="https://openai.com/" target="_blank" rel="noopener">OpenAI</a> 的 Audio Transcriptions API 提供（使用 <code>gpt-4o-transcribe</code> 模型）。</p>
+<h2>二、第三方服務</h2>
+
+<h3>1. Microsoft Azure AI Speech（發音評分）</h3>
+<p>本 App 的發音評分由 <a href="https://azure.microsoft.com/products/ai-services/ai-speech" target="_blank" rel="noopener">Microsoft Azure AI Speech</a> 的語音轉文字與發音評估（Pronunciation Assessment）功能提供，在 Azure 的日本東部區域處理。</p>
 <ul>
-  <li><strong>傳送的內容：</strong>僅有前述的短音檔本身，以及該題目的語言代碼（如 <code>zh</code>、<code>en</code>）以提升辨識準確度。</li>
+  <li><strong>傳送的內容：</strong>僅有前述的短音檔、目前圖卡上的詞語（例如「蘋果」，作為比對用的標準答案），以及該詞語的語言（<code>zh-TW</code> 或 <code>en-US</code>）。</li>
   <li><strong>不會傳送：</strong>裝置識別碼、帳號資訊、姓名或任何可辨識個人身分的欄位。音檔不會附帶任何身分標記。</li>
-  <li><strong>回傳的內容：</strong>辨識出的文字，僅在裝置端即時用於比對答案，不會被存下來。</li>
-  <li><strong>OpenAI 端的處理：</strong>依 OpenAI 對 API 資料的使用政策，透過 API 傳送的內容<strong>預設不會用於訓練其模型</strong>，並僅為濫用偵測目的保留有限期間後刪除。詳細條款請見 <a href="https://openai.com/policies/privacy-policy/" target="_blank" rel="noopener">OpenAI 隱私權政策</a> 與 <a href="https://openai.com/enterprise-privacy/" target="_blank" rel="noopener">API 資料使用政策</a>。</li>
+  <li><strong>回傳的內容：</strong>辨識出的文字與發音分數，僅在裝置端即時用於顯示回饋，不會被存下來。</li>
+  <li><strong>Microsoft 端的處理：</strong>依 Microsoft 的官方文件，即時語音辨識與發音評估的音訊只在伺服器記憶體中處理，<strong>不會被保留或儲存</strong>。詳細說明請見 <a href="https://learn.microsoft.com/azure/foundry/responsible-ai/speech-service/speech-to-text/data-privacy-security" target="_blank" rel="noopener">Speech to text 的資料、隱私與安全性說明</a> 與 <a href="https://privacy.microsoft.com/privacystatement" target="_blank" rel="noopener">Microsoft 隱私權聲明</a>。</li>
 </ul>
-<p>本 App 除 OpenAI 之外，不會將任何資料傳送給其他第三方，也不會為了行銷或任何目的出售、出租或交換使用者資料。</p>
+
+<h3>2. Google Firebase（內容下載與訂閱查詢）</h3>
+<ul>
+  <li><strong>Cloud Storage：</strong>本 App 會下載圖卡圖片與音檔、主題清單，以及一個記錄最新 App 版本的小檔案。這些都只是下載，不會上傳任何關於您或孩子的資料。</li>
+  <li><strong>Cloud Functions（僅限 Android）：</strong>第一節第 2 點所說的訂閱查詢，在 Google Cloud 的台灣區域執行。它只會收到購買憑證，用來向 Google Play 查詢，不會保存。iOS 版不使用此功能。</li>
+  <li>詳細說明請見 <a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">Firebase 隱私權說明</a>。</li>
+</ul>
+
+<h3>3. Apple App Store 與 Google Play</h3>
+<ul>
+  <li>付款與訂閱由 Apple 或 Google 依其各自的隱私權政策處理（見第一節第 2 點）。</li>
+  <li>「幫我們評分」使用系統內建的評分視窗，本 App 看不到您填寫的內容。</li>
+</ul>
+
+<p>與所有網路連線一樣，上述服務會收到裝置的 IP 位址以便回應，並可能為了安全與維運目的，短期保留標準的技術紀錄。我們不會用這些資訊辨識、追蹤或分析任何人。除上述服務之外，本 App 不會將任何資料傳送給其他第三方，也不會為了行銷或任何目的出售、出租或交換使用者資料。</p>
 
 <h2>三、兒童隱私</h2>
-<p>本 App 的主要使用者是幼兒，我們因此刻意採取「最小化蒐集」的設計：不建立帳號、不做身分辨識、不投放廣告、不做行為追蹤，錄音只作為當下判斷發音之用並隨即刪除。</p>
+<p>本 App 的主要使用者是幼兒，我們因此刻意採取「最小化蒐集」的設計：不建立帳號、不做身分辨識、不投放廣告、不做行為追蹤，錄音只作為當下評估發音之用並隨即刪除。</p>
+<p>購買與設定頁面前都設有家長驗證（一道算術題），孩子無法自行進入。</p>
 <p>我們不會在知情的情況下蒐集兒童的個人身分資料。若您是家長或監護人，並認為我們可能不慎取得了孩子的個人資料，請透過下方信箱與我們聯絡，我們將立即查明並刪除。</p>
 <p>我們建議由家長或監護人陪同幼兒使用本 App，並在裝置的系統設定中管理麥克風權限。</p>
 
@@ -180,8 +209,8 @@
 <table>
   <thead><tr><th>權限</th><th>為什麼需要</th></tr></thead>
   <tbody>
-    <tr><td>麥克風</td><td>錄下孩子唸出的詞語以進行發音辨識。拒絕此權限時，App 其餘功能（看圖卡、聽發音）仍可正常使用，僅無法使用錄音評分。</td></tr>
-    <tr><td>網路連線</td><td>將音檔傳送至語音辨識服務並取回結果。</td></tr>
+    <tr><td>麥克風</td><td>錄下孩子唸出的詞語以進行發音評分。拒絕此權限時，App 其餘功能（看圖卡、聽發音）仍可正常使用，僅無法使用錄音評分。</td></tr>
+    <tr><td>網路連線</td><td>將音檔傳送至發音評分服務、下載圖卡內容與更新資訊，以及查詢訂閱狀態。</td></tr>
   </tbody>
 </table>
 </div>
@@ -189,21 +218,22 @@
 
 <h2>五、資料保存與安全</h2>
 <ul>
-  <li>我們不營運任何後端伺服器，也沒有存放使用者資料的資料庫。</li>
-  <li>錄音僅以暫存檔形式短暫存在於裝置上，辨識結束後即刪除；不會保留於任何我們可存取的位置。</li>
-  <li>與語音辨識服務之間的所有傳輸均採用 HTTPS 加密連線。</li>
+  <li>我們沒有使用者帳號，也沒有存放使用者資料的資料庫。</li>
+  <li>錄音僅以暫存檔形式短暫存在於裝置上，評分結束後即刪除；Microsoft 不會保存，也不會保留於任何我們可存取的位置。</li>
+  <li>傳送到我們雲端函式的購買憑證（僅限 Android）只用於單次查詢，不會被保存。</li>
+  <li>所有網路傳輸均採用 HTTPS 加密連線。</li>
 </ul>
 
 <h2>六、您的權利</h2>
 <p>由於我們不保存任何可識別您或您孩子身分的資料，我們沒有可供查詢、更正或匯出的個人資料紀錄。您對本機資料的控制方式如下：</p>
 <ul>
-  <li><strong>刪除：</strong>解除安裝本 App，或清除 App 資料，即可刪除全部本機設定。</li>
-  <li><strong>停止傳送：</strong>撤銷麥克風權限或關閉網路連線，即不會再有任何音檔被傳送。</li>
+  <li><strong>刪除：</strong>解除安裝本 App，或清除 App 資料，即可刪除全部本機資料。</li>
+  <li><strong>停止傳送：</strong>撤銷麥克風權限即不會再有任何音檔被傳送；關閉網路連線則會停止所有傳送。</li>
 </ul>
 <p>若您位於歐洲經濟區、英國或其他賦予您資料主體權利的地區，仍歡迎透過下方信箱與我們聯繫。</p>
 
 <h2>七、政策變更</h2>
-<p>本政策如有修訂，我們會更新本頁最上方的「最後更新」日期。若涉及重大變更（例如新增資料蒐集項目），我們會在 App 內以明顯方式告知。</p>
+<p>本政策如有修訂，我們會更新本頁最上方的「最後更新」日期。若涉及重大變更（例如新增資料蒐集項目或更換第三方服務），我們會在 App 內以明顯方式告知。</p>
 
 <h2>八、聯絡我們</h2>
 <p>對本政策或資料處理方式有任何疑問，請聯絡：</p>
@@ -222,7 +252,8 @@
 
 <div class="callout">
   <p><strong>Summary:</strong> The App requires no sign-up and no account. It does not collect names, birthdates, phone numbers, email addresses, or any personally identifying information.</p>
-  <p>The only data that leaves the device is a <strong>short audio clip</strong> recorded while the child holds the record button. It is sent to OpenAI solely for speech recognition and is <strong>deleted from the device immediately</strong> afterwards. We operate no servers of our own, and we never retain, analyze, or sell recordings.</p>
+  <p>When the child holds the record button, a <strong>short audio clip</strong> and the word being practiced are sent to Microsoft Azure AI Speech to score the pronunciation. The clip is <strong>deleted from the device immediately</strong> afterwards, and Microsoft does not store it. We never retain, analyze, or sell recordings.</p>
+  <p>The App also downloads flashcard content from Google Firebase, and subscriptions are handled by Apple or Google. None of these send us information that identifies you or your child.</p>
 </div>
 
 <h2>1. Data We Process</h2>
@@ -230,14 +261,21 @@
 <h3>1.1 Voice recordings (sent to a third party)</h3>
 <ul>
   <li><strong>When:</strong> The microphone activates only while the user holds down the record button on screen, and stops the moment it is released. The App never records in the background and never activates the microphone on its own.</li>
-  <li><strong>Length:</strong> A single recording is capped at <strong>10 seconds</strong>. Recordings shorter than 0.5 seconds are treated as accidental taps and discarded.</li>
-  <li><strong>Where it is stored:</strong> The recording is written as an AAC file (.m4a, mono) to the device’s <strong>system temporary directory</strong>. It is never saved to the photo library, the Files app, or any cloud storage.</li>
-  <li><strong>Purpose:</strong> Solely to transcribe the spoken word and compare it against the expected answer, in order to judge pronunciation and provide feedback and a score.</li>
-  <li><strong>Afterwards:</strong> Once the recognition step finishes — whether it succeeds, fails, or is cancelled — the temporary audio file is <strong>deleted immediately</strong>.</li>
+  <li><strong>Length:</strong> A single recording is capped at <strong>10 seconds</strong>. Recordings shorter than 0.5 seconds are treated as accidental taps and discarded without being sent.</li>
+  <li><strong>Where it is stored:</strong> The recording is written as a WAV file (16 kHz, mono) to the device’s <strong>system temporary directory</strong>. It is never saved to the photo library, the Files app, or any cloud storage.</li>
+  <li><strong>Purpose:</strong> Solely to assess how the word was pronounced compared with the word on the card, in order to provide feedback and a score.</li>
+  <li><strong>Afterwards:</strong> Once the scoring step finishes — whether it succeeds, fails, or is cancelled — the temporary audio file is <strong>deleted immediately</strong>.</li>
 </ul>
 
-<h3>1.2 Settings stored on the device (never transmitted)</h3>
-<p>The following are stored in the App’s private on-device preferences, readable only by the App, and are never uploaded anywhere:</p>
+<h3>1.2 Subscription purchases</h3>
+<ul>
+  <li>Purchases are handled entirely by the Apple App Store or Google Play. We never receive your payment details, your name, or your Apple ID / Google account.</li>
+  <li>The App only receives the purchase status (which plan, whether it is active, and when it expires), which it uses to unlock content and to show it on the “My Subscription” page.</li>
+  <li><strong>Android only:</strong> To show the plan and expiry date, the App sends the Google Play purchase token to our cloud function (see 2.2), which looks it up with Google Play and returns the result. The token is a random string issued by Google Play that contains no personal information, and it is not stored.</li>
+</ul>
+
+<h3>1.3 Data stored on the device (never transmitted)</h3>
+<p>The following are stored in the App’s private storage on the device, readable only by the App, and are never uploaded anywhere:</p>
 <div class="table-scroll">
 <table>
   <thead><tr><th>Item</th><th>Content</th><th>Purpose</th></tr></thead>
@@ -245,12 +283,16 @@
     <tr><td>Language</td><td>Traditional Chinese or English</td><td>Remember the chosen interface and content language</td></tr>
     <tr><td>Sound settings</td><td>Background music and interaction sound volume</td><td>Remember the user’s volume preferences</td></tr>
     <tr><td>Entitlement</td><td>Free / subscribed tier flag</td><td>Determine which content is available</td></tr>
+    <tr><td>Privacy consent</td><td>The policy version agreed to and the date</td><td>Know whether this policy needs to be shown again</td></tr>
+    <tr><td>Rating prompt records</td><td>First-use date, number of completed quizzes, when and how often the rating prompt was shown, and whether the parent chose not to be asked again</td><td>Avoid asking for a rating too often</td></tr>
+    <tr><td>Update notice record</td><td>The last app version an update notice was shown for</td><td>Avoid repeating the same update notice</td></tr>
+    <tr><td>Downloaded content</td><td>Flashcard images, audio, and their version numbers</td><td>Let the App work offline and download only what has changed</td></tr>
   </tbody>
 </table>
 </div>
 <p>Uninstalling the App, or clearing its data via system settings, removes all of the above.</p>
 
-<h3>1.3 What we do NOT collect</h3>
+<h3>1.4 What we do NOT collect</h3>
 <ul>
   <li>No names, birthdates, gender, addresses, phone numbers, or email addresses.</li>
   <li>No location data, contacts, photos, or calendar access.</li>
@@ -259,18 +301,35 @@
   <li>No social features, comments, chat, or user-to-user interaction. Children cannot publicly share any content.</li>
 </ul>
 
-<h2>2. Third-Party Service: OpenAI Speech Recognition</h2>
-<p>Speech recognition is provided by the <a href="https://openai.com/" target="_blank" rel="noopener">OpenAI</a> Audio Transcriptions API, using the <code>gpt-4o-transcribe</code> model.</p>
+<h2>2. Third-Party Services</h2>
+
+<h3>2.1 Microsoft Azure AI Speech (pronunciation scoring)</h3>
+<p>Pronunciation scoring is provided by the speech to text and Pronunciation Assessment features of <a href="https://azure.microsoft.com/products/ai-services/ai-speech" target="_blank" rel="noopener">Microsoft Azure AI Speech</a>, processed in Azure’s Japan East region.</p>
 <ul>
-  <li><strong>What is sent:</strong> Only the short audio clip described above, plus the language code for the current item (e.g. <code>zh</code>, <code>en</code>) to improve accuracy.</li>
+  <li><strong>What is sent:</strong> Only the short audio clip described above, the word on the current card (for example “apple”) to compare against, and its language (<code>zh-TW</code> or <code>en-US</code>).</li>
   <li><strong>What is not sent:</strong> No device identifiers, account information, names, or any personally identifying fields. The audio carries no identity marker.</li>
-  <li><strong>What comes back:</strong> The transcribed text, used on-device in real time to check the answer and never stored.</li>
-  <li><strong>Handling by OpenAI:</strong> Under OpenAI’s API data usage policy, content submitted through the API is <strong>not used to train their models by default</strong>, and is retained only for a limited period for abuse monitoring before deletion. See the <a href="https://openai.com/policies/privacy-policy/" target="_blank" rel="noopener">OpenAI Privacy Policy</a> and <a href="https://openai.com/enterprise-privacy/" target="_blank" rel="noopener">API data usage policies</a>.</li>
+  <li><strong>What comes back:</strong> The recognized text and pronunciation scores, used on-device in real time to show feedback and never stored.</li>
+  <li><strong>Handling by Microsoft:</strong> According to Microsoft’s documentation, audio sent for real-time speech recognition and pronunciation assessment is processed only in server memory and is <strong>not retained or stored</strong>. See <a href="https://learn.microsoft.com/azure/foundry/responsible-ai/speech-service/speech-to-text/data-privacy-security" target="_blank" rel="noopener">Data, privacy, and security for Speech to text</a> and the <a href="https://privacy.microsoft.com/privacystatement" target="_blank" rel="noopener">Microsoft Privacy Statement</a>.</li>
 </ul>
-<p>Apart from OpenAI, the App transmits no data to any third party. We never sell, rent, or trade user data for marketing or any other purpose.</p>
+
+<h3>2.2 Google Firebase (content downloads and subscription lookup)</h3>
+<ul>
+  <li><strong>Cloud Storage:</strong> The App downloads flashcard images and audio, the topic list, and a small file with the latest app version. These are downloads only; nothing about you or your child is uploaded.</li>
+  <li><strong>Cloud Functions (Android only):</strong> The subscription lookup described in 1.2 runs on Google Cloud in the Taiwan region. It only receives the purchase token, uses it to ask Google Play, and does not store it. The iOS version does not use this.</li>
+  <li>See the <a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">Firebase privacy information</a>.</li>
+</ul>
+
+<h3>2.3 Apple App Store and Google Play</h3>
+<ul>
+  <li>Payments and subscriptions are processed by Apple or Google under their own privacy policies (see 1.2).</li>
+  <li>The “Rate This App” prompt uses the system’s own rating dialog; the App does not see what you enter.</li>
+</ul>
+
+<p>As with any internet request, these services receive the device’s IP address in order to respond, and may keep standard technical logs for a limited time for security and operations. We do not use this to identify, track, or profile anyone. Apart from the services above, the App transmits no data to any third party. We never sell, rent, or trade user data for marketing or any other purpose.</p>
 
 <h2>3. Children’s Privacy</h2>
-<p>The App’s primary users are young children, so it is deliberately built for minimal collection: no accounts, no identification, no advertising, no behavioral tracking. Recordings exist only long enough to judge a single pronunciation attempt and are then deleted.</p>
+<p>The App’s primary users are young children, so it is deliberately built for minimal collection: no accounts, no identification, no advertising, no behavioral tracking. Recordings exist only long enough to score a single pronunciation attempt and are then deleted.</p>
+<p>Purchases and Settings are placed behind a parental gate (a math question), so children cannot reach them on their own.</p>
 <p>We do not knowingly collect personal information from children. If you are a parent or guardian and believe we may have inadvertently obtained your child’s personal information, please contact us at the address below and we will investigate and delete it promptly.</p>
 <p>We recommend that a parent or guardian supervise young children while using the App and manage microphone permissions in the device’s system settings.</p>
 
@@ -279,8 +338,8 @@
 <table>
   <thead><tr><th>Permission</th><th>Why it is needed</th></tr></thead>
   <tbody>
-    <tr><td>Microphone</td><td>To record the spoken word for pronunciation recognition. If denied, the rest of the App (viewing cards, hearing pronunciation) continues to work; only recorded scoring is unavailable.</td></tr>
-    <tr><td>Internet</td><td>To send the audio to the speech recognition service and receive the result.</td></tr>
+    <tr><td>Microphone</td><td>To record the spoken word for pronunciation scoring. If denied, the rest of the App (viewing cards, hearing pronunciation) continues to work; only recorded scoring is unavailable.</td></tr>
+    <tr><td>Internet</td><td>To send the audio for pronunciation scoring, download flashcard content and update information, and check subscription status.</td></tr>
   </tbody>
 </table>
 </div>
@@ -288,21 +347,22 @@
 
 <h2>5. Retention and Security</h2>
 <ul>
-  <li>We operate no backend servers and maintain no database of user data.</li>
-  <li>Recordings exist only briefly as temporary files on the device and are deleted after recognition. They are never retained anywhere we can access.</li>
-  <li>All transmission to the speech recognition service uses encrypted HTTPS connections.</li>
+  <li>We have no user accounts and maintain no database of user data.</li>
+  <li>Recordings exist only briefly as temporary files on the device and are deleted after scoring. Microsoft does not store them, and they are never retained anywhere we can access.</li>
+  <li>Purchase tokens sent to our cloud function (Android only) are used for a single lookup and are not stored.</li>
+  <li>All network connections use encrypted HTTPS.</li>
 </ul>
 
 <h2>6. Your Rights</h2>
 <p>Because we retain no data that identifies you or your child, there is no personal data record for us to look up, correct, or export. You control on-device data as follows:</p>
 <ul>
-  <li><strong>Deletion:</strong> Uninstall the App or clear its data to remove all local settings.</li>
-  <li><strong>Stop transmission:</strong> Revoke the microphone permission or disable network access, and no audio will be sent.</li>
+  <li><strong>Deletion:</strong> Uninstall the App or clear its data to remove all local data.</li>
+  <li><strong>Stop transmission:</strong> Revoke the microphone permission and no audio will be sent; disable network access to stop all transmission.</li>
 </ul>
 <p>If you are located in the European Economic Area, the United Kingdom, or another region that grants you data subject rights, you are welcome to contact us at the address below.</p>
 
 <h2>7. Changes to This Policy</h2>
-<p>If this policy is revised, we will update the “Last updated” date at the top of this page. For material changes — such as collecting a new category of data — we will notify users prominently within the App.</p>
+<p>If this policy is revised, we will update the “Last updated” date at the top of this page. For material changes — such as collecting a new category of data or changing a third-party service — we will notify users prominently within the App.</p>
 
 <h2>8. Contact Us</h2>
 <p>For questions about this policy or our data practices, please contact:</p>
